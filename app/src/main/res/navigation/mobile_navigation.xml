@@ -6,6 +6,19 @@
     app:startDestination="@+id/navigation_home">
 
     <fragment
+        android:id="@+id/navigation_for_you"
+        android:name="com.contrivancenexus.uscientist.ui.foryou.ForYouFragment"
+        android:label="For You"
+        tools:layout="@layout/fragment_for_you" />
+
+    <fragment
+        android:id="@+id/navigation_liked_projects"
+        android:name="com.contrivancenexus.uscientist.ui.likedprojects.LikedProjectsFragment"
+        android:label="Liked Projects"
+        tools:layout="@layout/fragment_liked_projects" />
+
+
+    <fragment
         android:id="@+id/navigation_home"
         android:name="com.contrivancenexus.uscientist.ui.home.HomeFragment"
         android:label="@string/title_home"
@@ -18,8 +31,8 @@
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.contrivancenexus.uscientist.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_profile"
+        android:name="com.contrivancenexus.uscientist.ui.profile.ProfileFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_profile" />
 </navigation>

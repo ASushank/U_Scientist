@@ -1,4 +1,4 @@
-package com.contrivancenexus.uscientist.ui.notifications;
+package com.contrivancenexus.uscientist.ui.profile;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,21 +13,18 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.contrivancenexus.uscientist.LogInActivity;
-import com.contrivancenexus.uscientist.databinding.FragmentNotificationsBinding;
+import com.contrivancenexus.uscientist.databinding.FragmentProfileBinding;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-public class NotificationsFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
-    private FragmentNotificationsBinding binding;
+    private FragmentProfileBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        NotificationsViewModel notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
-
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
+        binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         binding.idBtnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,8 +41,6 @@ public class NotificationsFragment extends Fragment {
             }
         });
 
-        final TextView textView = binding.textNotifications;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
