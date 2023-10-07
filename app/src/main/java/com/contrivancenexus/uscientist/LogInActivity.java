@@ -44,7 +44,7 @@ public class LogInActivity extends AppCompatActivity {
                                     .createSignInIntentBuilder()
                                     .setIsSmartLockEnabled(false)
                                     .setAvailableProviders(providers)
-                                    .setLogo(R.drawable.profile)
+                                    .setLogo(R.mipmap.ic_launcher)
                                     .setTheme(R.style.Theme_LogIn)
                                     .build(),
                             SIGN_IN_CODE
