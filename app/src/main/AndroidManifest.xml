@@ -16,9 +16,12 @@
         android:theme="@style/Theme.UScientist"
         tools:targetApi="31">
         <activity
+            android:name=".AddVideoActivity"
+            android:exported="false" />
+        <activity
             android:name=".LogInActivity"
-            android:theme="@style/Theme.LogIn"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.LogIn">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,8 +31,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
     </application>
 
 </manifest>
