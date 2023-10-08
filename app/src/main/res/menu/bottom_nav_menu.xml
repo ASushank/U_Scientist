@@ -7,13 +7,19 @@
         android:title="@string/title_home" />
 
     <item
+        android:id="@+id/navigation_for_you"
+        android:icon="@drawable/baseline_smart_button_24"
+        android:title="For You" />
+
+    <item
+        android:id="@+id/navigation_liked_projects"
+        android:icon="@drawable/baseline_thumb_up_24"
+        android:title="Liked Projects" />
+
+
+    <item
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="@string/title_dashboard" />
-
-    <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications" />
 
 </menu>

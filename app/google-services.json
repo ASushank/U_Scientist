@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "908215287677",
+    "firebase_url": "https://u-scientist-default-rtdb.firebaseio.com",
+    "project_id": "u-scientist",
+    "storage_bucket": "u-scientist.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:908215287677:android:00aacfe356ff20312a5614",
+        "android_client_info": {
+          "package_name": "com.contrivancenexus.uscientist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "908215287677-v689bmm4mpfa0d8u4cpk186q4024co3p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.contrivancenexus.uscientist",
+            "certificate_hash": "1f3c4166ebca9fbaeaad83c579f4ef01f4e07301"
+          }
+        },
+        {
+          "client_id": "908215287677-mdci5h6j0amohaeg45107sadvdu3nki7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCA3L3-3_aBXXZ9nAFimEFICC9cTn_dio"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "908215287677-mdci5h6j0amohaeg45107sadvdu3nki7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
