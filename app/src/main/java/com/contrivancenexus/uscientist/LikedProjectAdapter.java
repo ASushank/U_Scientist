@@ -18,52 +18,46 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.GenericTransitionOptions;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.MyViewHolder>{
-    public ProjectAdapter(Context context, ArrayList<Project> projectArrayList) {
+public class LikedProjectAdapter extends RecyclerView.Adapter<LikedProjectAdapter.MyViewHolder>{
+    public LikedProjectAdapter(Context context, ArrayList<LikedProject> likedProjectArrayList) {
         this.context = context;
-        this.list = projectArrayList;
+        this.list = likedProjectArrayList;
     }
 
     Context context;
-    ArrayList<Project> list;
+    ArrayList<LikedProject> list;
     int lastPosition = -1;
 
 
     @NonNull
     @Override
-    public ProjectAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v  = LayoutInflater.from(context).inflate(R.layout.project_item, parent, false);
+    public LikedProjectAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v  = LayoutInflater.from(context).inflate(R.layout.liked_project_item, parent, false);
         return new MyViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProjectAdapter.MyViewHolder holder, int position) {
-        Project project = list.get(position);
-        holder.name.setText(project.getName());
-        holder.desc.setText(project.getDesc());
+    public void onBindViewHolder(@NonNull LikedProjectAdapter.MyViewHolder holder, int position) {
+        LikedProject likedProject = list.get(position);
+        holder.name.setText(likedProject.getName());
+        holder.desc.setText(likedProject.getDesc());
         holder.viewWebsite.setOnClickListener(view -> {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse(project.getUrl()));
+                    intent.setData(Uri.parse(likedProject.getUrl()));
                     context.startActivity(intent);
         });
-        holder.like.setOnClickListener(new View.OnClickListener() {
+        holder.discussion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                holder.like.setText("Liked");
-                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getUid()).child("LikedProjects").push();
-                databaseReference.setValue(project);
             }
         });
         Glide.with(context)
-                .load(project.getimageurl())
+                .load(likedProject.getimageurl())
                 .placeholder(R.drawable.load)
                 .transition(GenericTransitionOptions.with(android.R.anim.fade_in))
                 .into(holder.img);
@@ -86,15 +80,15 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.MyViewHo
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name, desc;
         ImageView img;
-        Button viewWebsite, like;
+        Button viewWebsite, discussion;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.tvName);
-            desc = itemView.findViewById(R.id.tvDesc);
-            img = itemView.findViewById(R.id.imgProject);
-            viewWebsite = itemView.findViewById(R.id.btnViewWebsite);
-            like = itemView.findViewById(R.id.btnLike);
+            name = itemView.findViewById(R.id.tvLikedName);
+            desc = itemView.findViewById(R.id.tvLikedDesc);
+            img = itemView.findViewById(R.id.imgLikedProject);
+            viewWebsite = itemView.findViewById(R.id.btnLikedViewWebsite);
+            discussion = itemView.findViewById(R.id.btnDiscussion);
         }
     }
 }
